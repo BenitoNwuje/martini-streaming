@@ -23,7 +23,6 @@ export const Wrapper = styled.div`
       transform: translate(-50%, -50%);
       width: 60%;
       padding: 1rem;
-      background-color: ${COLORS.PRIMARY + "d0"};
 
       @media (max-width: ${MEDIA_QUERIES.MEDIUM}) {
         top: 120px;
@@ -48,8 +47,7 @@ export const Wrapper = styled.div`
         color: white;
         text-transform: uppercase;
         margin: auto;
-        border-bottom: solid 5px white;
-        margin-bottom: 1rem;
+        margin-bottom: 2rem;
 
         @media (max-width: ${MEDIA_QUERIES.MEDIUM}) {
           font-size: 1.5rem;

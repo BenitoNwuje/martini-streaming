@@ -4,8 +4,9 @@ import {  useStaticQuery, graphql } from "gatsby"
 import Layout from "../components/Layout"
 import SEO from "../components/Seo"
 
-import {Wrapper, Image, Artist, BottomEdgeDown, BottomEdgeUp} from "./pageStyles/pageStyles"
+import {Wrapper, Image, Artist} from "./pageStyles/pageStyles"
 import {COLORS} from "../constants"
+
 
 const IndexPage = () => {
   const {
@@ -74,14 +75,12 @@ const IndexPage = () => {
       <div className="banner">
       <Image fluid={homePageHeaderPicture.imageFile.childImageSharp.fluid} alt={homePageHeaderPicture.altText}  />
       <div className="inner-div">
-  <p className="header-title">{homePageHeaderTitle}</p>
-  <p className="header-description">{homePageHeaderDescription}</p>
+        <p className="header-title">{homePageHeaderTitle}</p>
+        <p className="header-description">{homePageHeaderDescription}</p>
       </div>
-      <BottomEdgeDown color={COLORS.BLACK} />
       </div>
       <div className="description">
           <p>{homePageDescription}</p>
-          <BottomEdgeUp color={COLORS.PRIMARY} />
       </div>
       <div className="artists"> 
           <h2>Featured Shows</h2>
@@ -99,12 +98,8 @@ const IndexPage = () => {
               </Artist>
             ))}
           </div>
-       
-
       </div>
     </Wrapper>
-
-   
   </Layout>)
 }
 
