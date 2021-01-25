@@ -5,14 +5,17 @@
  * See: https://www.gatsbyjs.com/docs/use-static-query/
  */
 
-import React from "react"
+import React, {useState} from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
-
+import Hamburger from './header/Hamburger'
+import OverlayMenu from './header/OverlayMenu'
 import Header from "./header/Header"
 import "./layout.css"
 
 const Layout = ({ children }) => {
+  const [menuOpen, SetMenuOpen] = useState(false);
+  const handleOverlayMenu = () => SetMenuOpen(!menuOpen)
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -26,6 +29,8 @@ const Layout = ({ children }) => {
   return (
     <>
       <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
+      <Hamburger handleOverlayMenu={handleOverlayMenu} />
+      <OverlayMenu handleOverlayMenu={handleOverlayMenu} menuOpen={menuOpen} />
       <div
         style={{
           margin: `0 auto`,

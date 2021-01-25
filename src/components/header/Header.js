@@ -1,7 +1,7 @@
 import { useStaticQuery, graphql, Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
-import { HeaderWrapper, Image} from './headerStyles/headerStyles'
+import { HeaderWrapper, Image} from '../../headerStyles/headerStyles'
 import Menu from './Menu'
 const Header = ({ siteTitle }) => {
   const {

@@ -4,7 +4,7 @@ import {  useStaticQuery, graphql } from "gatsby"
 import Layout from "../components/Layout"
 import SEO from "../components/Seo"
 
-import {Wrapper, Image, Artist} from "./pageStyles/pageStyles"
+import {Wrapper, Image, Artist} from "../pageStyles/pageStyles"
 import {COLORS} from "../constants"
 
 
@@ -34,7 +34,7 @@ const IndexPage = () => {
         sourceUrl
 				imageFile{
          childImageSharp {
-           fluid(quality: 100) {
+           fluid(quality: 75) {
              ...GatsbyImageSharpFluid_withWebp
            }
          } 
@@ -54,7 +54,7 @@ const IndexPage = () => {
               sourceUrl
 				      imageFile{
                 childImageSharp {
-                fluid(quality: 50) {
+                fluid(quality: 75) {
                   ...GatsbyImageSharpFluid_withWebp
            }
          } 
@@ -76,7 +76,8 @@ const IndexPage = () => {
       <Image fluid={homePageHeaderPicture.imageFile.childImageSharp.fluid} alt={homePageHeaderPicture.altText}  />
       <div className="inner-div">
         <p className="header-title">{homePageHeaderTitle}</p>
-        <p className="header-description">{homePageHeaderDescription}</p>
+        <p >{homePageHeaderDescription}</p>
+
       </div>
       </div>
       <div className="description">
@@ -84,7 +85,7 @@ const IndexPage = () => {
       </div>
       <div className="artists"> 
           <h2>Featured Shows</h2>
-          <div className="artist-item">
+          <div className="artist-items">
             {homePageFeaturedShows.map(({show, slug}) =>(
               <Artist key={slug} to={`/${slug}`}>
                 <Image 

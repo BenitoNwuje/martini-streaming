@@ -11,7 +11,7 @@ export const Wrapper = styled.div`
     display: flex;
     margin: 3rem auto;
     width: 90%;
-    background-color: ${COLORS.GREY};
+    background-color: ${COLORS.BLACK};
 
     @media (max-width: ${MEDIA_QUERIES.MEDIUM}) {
       flex-direction: column;
@@ -36,11 +36,11 @@ export const Wrapper = styled.div`
         flex-direction: column;
         justify-content: space-evenly;
         flex-wrap: wrap;
-        color: ${COLORS.SECONDARY};
+        color: ${COLORS.REDFLIX};
         font-family: ${FONT_FAMILIES.TITLE};
         text-transform: uppercase;
-        background-color: ${COLORS.GREY};
-        border-right: solid 15px ${COLORS.SECONDARY};
+        background-color: ${COLORS.BLACK};
+        border-right: solid 15px ${COLORS.REDFLIX};
 
         @media (max-width: ${MEDIA_QUERIES.MEDIUM}) {
           color: ${COLORS.PRIMARY};
@@ -67,6 +67,7 @@ export const Wrapper = styled.div`
         font-family: ${FONT_FAMILIES.TITLE};
         text-transform: uppercase;
         font-size: 4rem;
+        color: ${COLORS.WHITE};
         border-bottom: ${COLORS.WHITE} solid 6px;
         padding-bottom: 1rem;
         margin-left: auto;
@@ -79,29 +80,10 @@ export const Wrapper = styled.div`
         }
       }
 
-      h3 {
-        font-family: ${FONT_FAMILIES.TITLE};
-        color: ${COLORS.SECONDARY};
-        font-size: 1.8rem;
-        text-transform: uppercase;
-        margin-left: auto;
-        margin-bottom: auto;
-
-        @media (max-width: ${MEDIA_QUERIES.MEDIUM}) {
-          font-size: 1.3rem;
-          margin-right: auto;
-          margin-left: 0;
-          margin-bottom: 1rem;
-        }
-
-        span:first-child {
-          color: ${COLORS.TERTIARY};
-        }
-      }
 
       .description {
         font-size: 1.2rem;
-        color: ${COLORS.TERTIARY};
+        color: ${COLORS.WHITE};
 
         @media (max-width: ${MEDIA_QUERIES.MEDIUM}) {
           font-size: 1rem;
@@ -111,6 +93,7 @@ export const Wrapper = styled.div`
       .info {
         font-family: 2rem;
         text-transform: uppercase;
+        color: ${COLORS.WHITE};
       }
     }
   }

@@ -1,7 +1,7 @@
 import styled from "styled-components"
 import Img from "gatsby-image"
 import { Link } from "gatsby"
-import { COLORS, FONT_FAMILIES, MEDIA_QUERIES } from "../../constants"
+import { COLORS, FONT_FAMILIES, MEDIA_QUERIES } from "../constants"
 
 export const Wrapper = styled.div`
   .banner {
@@ -61,14 +61,14 @@ export const Wrapper = styled.div`
     flex-direction: column;
     position: relative;
     width: 100%;
+    color: ${COLORS.WHITE};
     padding: 3rem 0 10rem;
-    background-color: ${({ descriptionColor = COLORS.BLACK }) =>
+    background-color: ${({ descriptionColor = COLORS.REDFLIX }) =>
       `${descriptionColor}`};
 
     h2 {
       font-family: ${FONT_FAMILIES.TITLE};
       font-size: 3rem;
-      color: white;
       text-transform: uppercase;
       text-align: center;
       margin-bottom: 3rem;
@@ -81,7 +81,7 @@ export const Wrapper = styled.div`
     p {
       width: 70%;
       font-size: 1.3rem;
-      color: ${COLORS.TERTIARY};
+      color: ${COLORS.WHITE};
       text-align: center;
       line-height: 2rem;
       margin: auto;
@@ -93,36 +93,6 @@ export const Wrapper = styled.div`
     }
   }
 
-  .contact-info {
-    display: flex;
-    font-size: 1.5rem;
-    font-weight: 600;
-    text-align: center;
-    margin-top: 2rem;
-
-    @media (max-width: ${MEDIA_QUERIES.MEDIUM}) {
-      flex-direction: column;
-    }
-
-    div {
-      width: 33.33%;
-      padding: 1em;
-      color: ${COLORS.TERTIARY};
-
-      @media (max-width: ${MEDIA_QUERIES.MEDIUM}) {
-        width: 100%;
-      }
-
-      p {
-        margin-top: 1rem;
-        color: white;
-
-        a {
-          color: ${COLORS.SECONDARY};
-        }
-      }
-    }
-  }
 
   .artists {
     display: flex;
@@ -131,7 +101,7 @@ export const Wrapper = styled.div`
     align-items: center;
     width: 100%;
     padding: 2rem 5%;
-    background-color: ${({ artistsColor = COLORS.PRIMARY }) =>
+    background-color: ${({ artistsColor = COLORS.BLACK }) =>
       `${artistsColor}`};
 
     h2 {
@@ -178,7 +148,7 @@ export const Artist = styled(Link)`
 
     .artist-info {
       height: 100%;
-      background-color: ${COLORS.TERTIARY + "c0"};
+      background-color: ${COLORS.REDFLIX + "c0"};
 
       p {
         color: ${COLORS.BLACK};
@@ -196,7 +166,7 @@ export const Artist = styled(Link)`
     justify-content: center;
     align-items: center;
     padding: 1rem;
-    background-color: ${COLORS.BLACK + "c0"};
+    background-color: ${COLORS.REDFLIX + "c0"};
     transition: all 0.3s ease-in-out;
 
     p {
@@ -208,45 +178,14 @@ export const Artist = styled(Link)`
     }
 
     p:nth-child(2) {
-      color: ${COLORS.SECONDARY};
+      color: ${COLORS.REDFLIX};
 
       margin-top: 0.3rem;
     }
   }
 `
 
-export const BottomEdgeDown = styled.div`
-  position: absolute;
-  bottom: 0;
-  width: 0;
-  border-bottom: 130px solid ${COLORS.TERTIARY};
-  border-right: 100vw solid transparent;
 
-  &:before {
-    content: "";
-    display: block;
-    border-bottom: ${({ color }) => `100px solid ${color}`};
-    border-right: 100vw solid transparent;
-    transform: translateY(130px) scale(1.05);
-  }
-`
-
-export const BottomEdgeUp = styled.div`
-  position: absolute;
-  bottom: 0;
-  width: 0;
-  border-bottom: 140px solid ${COLORS.TERTIARY};
-  border-right: 100vw solid transparent;
-
-  &:after {
-    content: "";
-    display: block;
-    border-bottom: ${({ color }) => `100px solid ${color}`};
-    border-left: 100vw solid transparent;
-
-    transform: translateY(140px) scale(1.05);
-  }
-`
 
 export const Image = styled(Img)`
   width: 100%;

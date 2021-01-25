@@ -4,7 +4,7 @@ import {  useStaticQuery, graphql } from "gatsby"
 import Layout from "../components/Layout"
 import SEO from "../components/Seo"
 
-import {Wrapper, Image, Artist, BottomEdgeDown} from "./pageStyles/pageStyles"
+import {Wrapper, Image, Artist, BottomEdgeDown} from "../pageStyles/pageStyles"
 import {COLORS} from "../constants"
 const ShowPage = () => {
     const {wpcontent: {
@@ -27,7 +27,7 @@ query  {
           sourceUrl
 		  imageFile{
             childImageSharp {
-                fluid(quality: 100) {
+                fluid(quality: 75) {
                     ...GatsbyImageSharpFluid_withWebp
                     }
                 } 
@@ -47,7 +47,7 @@ query  {
               sourceUrl
 		      imageFile{
             childImageSharp {
-                fluid(quality: 100) {
+                fluid(quality: 75) {
                     ...GatsbyImageSharpFluid_withWebp
                     }
                 } 
@@ -71,7 +71,7 @@ query  {
                 <Image fluid={showPageHeaderPicture.imageFile.childImageSharp.fluid} alt={showPageHeaderPicture.altText} />
             </div>
             <div className="description">
-                <h2>We are Martini Streaming</h2>
+                <h2>We are Martiniflix</h2>
                 <p>{showPageDescription}</p>
             </div>
             <div className="artists">
